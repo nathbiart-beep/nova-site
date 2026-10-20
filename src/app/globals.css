@@ -68,7 +68,7 @@ p { margin: 0 0 1em; }
 .main-nav { display: flex; gap: 22px; margin-left: auto; font-weight: 800; font-size: 0.95rem; }
 .main-nav a { text-decoration: none; }
 .main-nav a:hover { text-decoration: underline; text-decoration-color: var(--green); }
-.header-cta { white-space: nowrap; }
+.header-cta { display: flex; gap: 10px; white-space: nowrap; }
 .mobile-nav { display: none; margin-left: auto; position: relative; }
 .mobile-nav summary { list-style: none; cursor: pointer; width: 44px; height: 44px; display: grid; place-content: center; gap: 5px; border: 2px solid var(--ink); border-radius: 12px; background: var(--white); }
 .mobile-nav summary::-webkit-details-marker { display: none; }
@@ -76,6 +76,10 @@ p { margin: 0 0 1em; }
 .mobile-nav nav { position: absolute; right: 0; top: 54px; background: var(--white); border: 2px solid var(--ink); border-radius: var(--radius-sm); box-shadow: var(--shadow); padding: 10px; display: grid; min-width: 250px; }
 .mobile-nav nav a { padding: 10px 12px; text-decoration: none; font-weight: 800; border-radius: 10px; }
 .mobile-nav nav a:hover { background: var(--mint); }
+@media (max-width: 1180px) {
+  .header-inner { gap: 18px; }
+  .main-nav { gap: 14px; font-size: 0.88rem; }
+}
 @media (max-width: 900px) {
   .main-nav, .header-cta { display: none; }
   .mobile-nav { display: block; }

@@ -14,9 +14,14 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <a className="btn btn-small header-cta" href={site.instagram} target="_blank" rel="noopener">
-          Instagram
-        </a>
+        <div className="header-cta">
+          <a className="btn btn-small" href={site.instagram} target="_blank" rel="noopener">
+            Instagram
+          </a>
+          <a className="btn btn-small btn-ghost" href={site.linkedin} target="_blank" rel="noopener">
+            LinkedIn
+          </a>
+        </div>
         <details className="mobile-nav">
           <summary aria-label="Ouvrir le menu">
             <span />
@@ -34,6 +39,12 @@ export function Header() {
                 Soirées à {v.name}
               </Link>
             ))}
+            <a href={site.instagram} target="_blank" rel="noopener">
+              Instagram
+            </a>
+            <a href={site.linkedin} target="_blank" rel="noopener">
+              LinkedIn
+            </a>
           </nav>
         </details>
       </div>
