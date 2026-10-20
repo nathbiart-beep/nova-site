@@ -7,7 +7,9 @@ import { config, fields, collection } from "@keystatic/core";
  * - En ligne (Vercel) : le contenu est enregistré dans votre dépôt GitHub. Chaque publication
  *   déclenche automatiquement une mise à jour du site. Voir README.md, étape « Activer l'admin ».
  */
-const githubRepo = process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO; // ex. "nova-bxl/nova-site"
+const githubRepo = process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO; // ex. "nathbiart-beep/nova-site"
+// Le mode GitHub ne s'active qu'une fois la GitHub App configurée (sinon le build échoue).
+const githubAppReady = Boolean(process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG);
 
 const villes = [
   { label: "Toutes les villes", value: "toutes" },
@@ -18,7 +20,7 @@ const villes = [
 
 export default config({
   storage:
-    process.env.NODE_ENV !== "development" && githubRepo
+    process.env.NODE_ENV !== "development" && githubRepo && githubAppReady
       ? { kind: "github", repo: githubRepo as `${string}/${string}` }
       : { kind: "local" },
   ui: {
