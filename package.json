@@ -1,0 +1,30 @@
+{
+  "name": "nova-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fontsource/great-vibes": "^5.3.0",
+    "@fontsource/montserrat": "^5.3.0",
+    "@keystar/ui": "^0.10.0",
+    "@keystatic/core": "^0.6.9",
+    "@keystatic/next": "^5.0.5",
+    "@markdoc/markdoc": "0.4.0",
+    "next": "^15.5.28",
+    "react": "^19.3.1",
+    "react-aria": "^3.50.0",
+    "react-dom": "^19.3.1",
+    "react-stately": "^3.48.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^5.9.3"
+  }
+}
