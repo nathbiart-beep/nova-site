@@ -1,3 +1,4 @@
+import { createElement } from "react";
 import { config, fields, collection } from "@keystatic/core";
 
 /**
@@ -24,7 +25,10 @@ export default config({
       ? { kind: "github", repo: githubRepo as `${string}/${string}` }
       : { kind: "local" },
   ui: {
-    brand: { name: "NOVA · Admin" },
+    brand: {
+      name: "NOVA · Admin",
+      mark: () => createElement("img", { src: "/admin-mark.svg", alt: "", width: 26, height: 26 }),
+    },
     navigation: {
       Contenu: ["articles", "evenements"],
       Réseau: ["partenaires"],

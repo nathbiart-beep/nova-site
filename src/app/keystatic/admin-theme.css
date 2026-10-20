@@ -1,0 +1,95 @@
+/* Thème NOVA pour l'admin Keystatic : on remplace les couleurs et la police de @keystar/ui. */
+
+/* ---- Clair (mint + vert NOVA) ---- */
+html body .kui-scheme--light,
+html body .kui-scheme--auto {
+  --kui-color-scale-slate11: #111111;
+  --kui-color-scale-slate10: #1f2a20;
+  --kui-color-scale-slate9: #48574a;
+  --kui-color-scale-slate8: #6f806f;
+  --kui-color-scale-slate7: #a3b8a3;
+  --kui-color-scale-slate6: #bfd3bf;
+  --kui-color-scale-slate5: #d3e3d3;
+  --kui-color-scale-slate4: #e1eee1;
+  --kui-color-scale-slate3: #e8f2e8;
+  --kui-color-scale-slate2: #eef6ee;
+  --kui-color-scale-slate1: #ffffff;
+  --kui-color-scale-indigo11: #1d7a00;
+  --kui-color-scale-indigo10: #186600;
+  --kui-color-scale-indigo9: #1d7a00;
+  --kui-color-scale-indigo8: #4fcf1f;
+  --kui-color-scale-indigo7: #7fe85a;
+  --kui-color-scale-indigo6: #a8f38c;
+  --kui-color-scale-indigo5: #c6f8b4;
+  --kui-color-scale-indigo4: #dbfbcf;
+  --kui-color-scale-indigo3: #e9fde1;
+  --kui-color-scale-indigo2: #f4fef0;
+  --kui-color-scale-indigo1: #fbfffa;
+  --kui-color-background-canvas: #eef6ee;
+  --kui-color-background-surface: #ffffff;
+  --kui-color-border-muted: #d3e3d3;
+}
+
+/* ---- Sombre (noir verdâtre + vert NOVA) ---- */
+html body .kui-scheme--dark {
+  --kui-color-scale-slate11: #f2f8f2;
+  --kui-color-scale-slate10: #dce8dc;
+  --kui-color-scale-slate9: #a9bba9;
+  --kui-color-scale-slate8: #7a8d7a;
+  --kui-color-scale-slate7: #4d5d4d;
+  --kui-color-scale-slate6: #374437;
+  --kui-color-scale-slate5: #2a352a;
+  --kui-color-scale-slate4: #212b21;
+  --kui-color-scale-slate3: #1a221a;
+  --kui-color-scale-slate2: #141a14;
+  --kui-color-scale-slate1: #0e130e;
+  --kui-color-scale-indigo11: #6dff40;
+  --kui-color-scale-indigo10: #2c9a0a;
+  --kui-color-scale-indigo9: #23860a;
+  --kui-color-scale-indigo8: #2f7a14;
+  --kui-color-scale-indigo7: #285f14;
+  --kui-color-scale-indigo6: #224d12;
+  --kui-color-scale-indigo5: #1d3f10;
+  --kui-color-scale-indigo4: #18330e;
+  --kui-color-scale-indigo3: #14290c;
+  --kui-color-scale-indigo2: #10200a;
+  --kui-color-scale-indigo1: #0c1708;
+}
+@media (prefers-color-scheme: dark) {
+  html body .kui-scheme--auto {
+    --kui-color-scale-slate11: #f2f8f2;
+    --kui-color-scale-slate10: #dce8dc;
+    --kui-color-scale-slate9: #a9bba9;
+    --kui-color-scale-slate8: #7a8d7a;
+    --kui-color-scale-slate7: #4d5d4d;
+    --kui-color-scale-slate6: #374437;
+    --kui-color-scale-slate5: #2a352a;
+    --kui-color-scale-slate4: #212b21;
+    --kui-color-scale-slate3: #1a221a;
+    --kui-color-scale-slate2: #141a14;
+    --kui-color-scale-slate1: #0e130e;
+    --kui-color-scale-indigo11: #6dff40;
+    --kui-color-scale-indigo10: #2c9a0a;
+    --kui-color-scale-indigo9: #23860a;
+    --kui-color-scale-indigo8: #2f7a14;
+    --kui-color-scale-indigo7: #285f14;
+    --kui-color-scale-indigo6: #224d12;
+    --kui-color-scale-indigo5: #1d3f10;
+    --kui-color-scale-indigo4: #18330e;
+    --kui-color-scale-indigo3: #14290c;
+    --kui-color-scale-indigo2: #10200a;
+    --kui-color-scale-indigo1: #0c1708;
+    --kui-color-background-canvas: var(--kui-color-scale-slate1);
+    --kui-color-background-surface: var(--kui-color-scale-slate2);
+    --kui-color-border-muted: var(--kui-color-scale-slate4);
+  }
+}
+
+/* ---- Police NOVA ---- */
+html body .kui-theme {
+  --kui-typography-font-family-base: var(--font-sans), system-ui, sans-serif;
+}
+html body .kui-theme h1,
+html body .kui-theme h2 {
+  letter-spacing: -0.01em;
+}
