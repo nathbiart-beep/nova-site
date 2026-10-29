@@ -279,7 +279,6 @@ p { margin: 0 0 1em; }
   .hero .btn-row { flex-direction: column; align-items: stretch; }
   .hero .btn-row .btn { width: 100%; }
   .hero .story-mock { display: none; } /* même contenu que « Prochainement », juste en dessous */
-  .card:not(.article-card) { padding: 18px; }
   .grid-3:has(> .city-card) { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
   .city-card { padding: 16px 8px 14px; justify-items: center; text-align: center; gap: 4px; }
   .city-card .city-short { font-size: 2rem; }
