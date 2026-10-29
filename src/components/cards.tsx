@@ -98,7 +98,7 @@ export function EmptyAgenda({ ville }: { ville?: string }) {
       <p className="muted">
         L'agenda complet de la semaine est publié chaque lundi en story à la une sur Instagram. Tu organises une soirée ? Envoie-la-nous en DM.
       </p>
-      <a className="btn" href="https://www.instagram.com/nova.bxl/" target="_blank" rel="noopener">
+      <a className="btn" href="https://www.instagram.com/novastudent.be/" target="_blank" rel="noopener">
         Voir l'agenda sur Instagram
       </a>
     </div>
