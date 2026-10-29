@@ -14,7 +14,7 @@ const faq = [
   },
   {
     q: "Où trouver l'agenda des soirées étudiantes de la semaine ?",
-    a: "Sur la page Agenda de ce site et en story à la une sur Instagram (@nova.bxl), avec une story par ville : Bruxelles, Namur et Louvain-la-Neuve.",
+    a: "Sur la page Agenda de ce site et en story à la une sur Instagram (@novastudent.be), avec une story par ville : Bruxelles, Namur et Louvain-la-Neuve.",
   },
   {
     q: "Je suis dans un cercle : comment faire apparaître notre soirée ?",
