@@ -82,7 +82,7 @@ export async function ogImage({ title, label }: { title: string; label?: string 
         >
           {title}
         </div>
-        <div style={{ display: "flex", fontSize: 28, fontWeight: 600 }}>Bruxelles · Namur · Louvain-la-Neuve · @nova.bxl</div>
+        <div style={{ display: "flex", fontSize: 28, fontWeight: 600 }}>Bruxelles · Namur · Louvain-la-Neuve · @novastudent.be</div>
       </div>
     ),
     {
