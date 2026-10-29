@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LogoLink, Star } from "./brand";
+import { MobileNav } from "./mobile-nav";
 import { nav, site, villeList } from "@/lib/site";
 
 export function Header() {
@@ -22,31 +23,7 @@ export function Header() {
             LinkedIn
           </a>
         </div>
-        <details className="mobile-nav">
-          <summary aria-label="Ouvrir le menu">
-            <span />
-            <span />
-            <span />
-          </summary>
-          <nav aria-label="Menu mobile">
-            {nav.map((item) => (
-              <Link key={item.href} href={item.href}>
-                {item.label}
-              </Link>
-            ))}
-            {villeList.map((v) => (
-              <Link key={v.slug} href={`/villes/${v.slug}`}>
-                Soirées à {v.name}
-              </Link>
-            ))}
-            <a href={site.instagram} target="_blank" rel="noopener">
-              Instagram
-            </a>
-            <a href={site.linkedin} target="_blank" rel="noopener">
-              LinkedIn
-            </a>
-          </nav>
-        </details>
+        <MobileNav />
       </div>
     </header>
   );
