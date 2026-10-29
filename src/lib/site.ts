@@ -1,4 +1,4 @@
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://nova-bxl.vercel.app").replace(/\/$/, "");
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.novastudent.be").replace(/\/$/, "");
 
 export const site = {
   name: "NOVA",
@@ -7,9 +7,9 @@ export const site = {
   description:
     "NOVA, le collectif étudiant de Bruxelles, Namur et Louvain-la-Neuve : agenda des soirées étudiantes, événements, guides, bons plans et partenariats avec les marques.",
   locale: "fr_BE",
-  email: "novabxl.contact@gmail.com",
-  instagram: "https://www.instagram.com/nova.bxl/",
-  instagramHandle: "@nova.bxl",
+  email: "contact@novastudent.be",
+  instagram: "https://www.instagram.com/novastudent.be/",
+  instagramHandle: "@novastudent.be",
   linkedin: "https://www.linkedin.com/company/nova-bxl/",
   keywords: [
     "soirées étudiantes",
@@ -69,7 +69,7 @@ export const villes: Record<
     faq: [
       {
         q: "Où trouver les soirées étudiantes à Bruxelles cette semaine ?",
-        a: "NOVA publie chaque semaine l'agenda des soirées étudiantes à Bruxelles sur cette page et en story à la une sur Instagram (@nova.bxl), avec les cercles et organisateurs identifiés.",
+        a: "NOVA publie chaque semaine l'agenda des soirées étudiantes à Bruxelles sur cette page et en story à la une sur Instagram (@novastudent.be), avec les cercles et organisateurs identifiés.",
       },
       {
         q: "C'est quoi un TD ?",
@@ -77,7 +77,7 @@ export const villes: Record<
       },
       {
         q: "Comment faire apparaître ma soirée dans l'agenda NOVA ?",
-        a: "Envoie ton événement en message privé sur Instagram (@nova.bxl) ou par e-mail à novabxl.contact@gmail.com avec la date, l'heure, le lieu et l'organisateur.",
+        a: "Envoie ton événement en message privé sur Instagram (@novastudent.be) ou par e-mail à contact@novastudent.be avec la date, l'heure, le lieu et l'organisateur.",
       },
     ],
     geo: { lat: 50.8467, lng: 4.3525 },
@@ -97,7 +97,7 @@ export const villes: Record<
     faq: [
       {
         q: "Où trouver les soirées étudiantes à Namur cette semaine ?",
-        a: "NOVA publie chaque semaine l'agenda des soirées étudiantes à Namur sur cette page et en story à la une sur Instagram (@nova.bxl).",
+        a: "NOVA publie chaque semaine l'agenda des soirées étudiantes à Namur sur cette page et en story à la une sur Instagram (@novastudent.be).",
       },
       {
         q: "Quelles écoles sont concernées ?",
@@ -105,7 +105,7 @@ export const villes: Record<
       },
       {
         q: "Comment proposer ma soirée ?",
-        a: "Envoie-nous ton événement sur Instagram (@nova.bxl) ou à novabxl.contact@gmail.com.",
+        a: "Envoie-nous ton événement sur Instagram (@novastudent.be) ou à contact@novastudent.be.",
       },
     ],
     geo: { lat: 50.4669, lng: 4.8675 },
@@ -125,7 +125,7 @@ export const villes: Record<
     faq: [
       {
         q: "Où trouver les soirées étudiantes à Louvain-la-Neuve cette semaine ?",
-        a: "NOVA publie chaque semaine l'agenda des soirées étudiantes à LLN sur cette page et en story à la une sur Instagram (@nova.bxl).",
+        a: "NOVA publie chaque semaine l'agenda des soirées étudiantes à LLN sur cette page et en story à la une sur Instagram (@novastudent.be).",
       },
       {
         q: "Quand ont lieu les 24h vélo ?",
@@ -133,7 +133,7 @@ export const villes: Record<
       },
       {
         q: "Comment proposer ma soirée ?",
-        a: "Envoie-nous ton événement sur Instagram (@nova.bxl) ou à novabxl.contact@gmail.com.",
+        a: "Envoie-nous ton événement sur Instagram (@novastudent.be) ou à contact@novastudent.be.",
       },
     ],
     geo: { lat: 50.6681, lng: 4.6118 },
