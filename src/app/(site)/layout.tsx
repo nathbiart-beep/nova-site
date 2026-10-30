@@ -1,3 +1,4 @@
+import { Analytics } from "@/components/analytics";
 import { Footer, Header, JsonLd } from "@/components/layout-parts";
 import { SITE_URL, site } from "@/lib/site";
 
@@ -36,6 +37,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       <Footer />
       <JsonLd data={organization} />
       <JsonLd data={website} />
+      <Analytics />
     </>
   );
 }

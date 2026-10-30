@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Analytics } from "@/components/analytics";
 import { Star } from "@/components/brand";
 import { Footer, Header } from "@/components/layout-parts";
 
@@ -20,6 +21,7 @@ export default function NotFound() {
         </div>
       </main>
       <Footer />
+      <Analytics notFound />
     </>
   );
 }

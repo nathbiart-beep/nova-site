@@ -4,5 +4,12 @@ import "./admin-theme.css";
 export const metadata = { title: "Admin", robots: { index: false, follow: false } };
 
 export default function Layout() {
-  return <KeystaticApp />;
+  return (
+    <>
+      <KeystaticApp />
+      <a href="/admin/stats" className="nova-stats-link">
+        📊 Statistiques
+      </a>
+    </>
+  );
 }
