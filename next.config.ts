@@ -3,6 +3,11 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // Pages are generated statically at build time for maximum speed (good for SEO).
   trailingSlash: false,
+  // Le contenu (soirées, articles) est lu au moment du rendu : on l'embarque
+  // dans les fonctions serveur, sinon la régénération horaire voit un agenda vide.
+  outputFileTracingIncludes: {
+    "/**/*": ["./content/**/*"],
+  },
   images: {
     formats: ["image/avif", "image/webp"],
   },
