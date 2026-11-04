@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getArticles, getEvents } from "@/lib/content";
+import { brusselsOffset, getArticles, getEvents } from "@/lib/content";
 import { SITE_URL, site, villeList, villes, type VilleSlug } from "@/lib/site";
 import { ArticleCard, EmptyAgenda, EventRow } from "@/components/cards";
 import { Breadcrumbs, JsonLd, PageHero } from "@/components/layout-parts";
@@ -43,7 +43,7 @@ export default async function VillePage({ params }: Props) {
       <section className="section">
         <div className="container">
           <Breadcrumbs items={[{ name: "Agenda", href: "/agenda" }, { name: v.name }]} />
-          <h2>Les prochaines soirées à {v.name}</h2>
+          <h2>Les soirées à {v.name} ({v.short}) cette semaine et les suivantes</h2>
           {events.length ? (
             <div className="event-list">
               {events.map((e) => (
@@ -125,6 +125,34 @@ export default async function VillePage({ params }: Props) {
           mainEntity: v.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
         }}
       />
+      {events.length > 0 && (
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: `Soirées étudiantes à ${v.name}`,
+            itemListElement: events.slice(0, 20).map((e, i) => ({
+              "@type": "ListItem",
+              position: i + 1,
+              item: {
+                "@type": "Event",
+                name: e.entry.title,
+                startDate: e.entry.date
+                  ? `${e.entry.date}T${/^\d{1,2}:\d{2}$/.test(e.entry.heure) ? e.entry.heure.padStart(5, "0") : "20:00"}:00${brusselsOffset(e.entry.date)}`
+                  : undefined,
+                url: `${SITE_URL}/agenda/${e.slug}`,
+                eventStatus: "https://schema.org/EventScheduled",
+                eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+                location: {
+                  "@type": "Place",
+                  name: e.entry.lieu || v.name,
+                  address: { "@type": "PostalAddress", streetAddress: e.entry.adresse || undefined, addressLocality: v.name, addressCountry: "BE" },
+                },
+              },
+            })),
+          }}
+        />
+      )}
       <JsonLd
         data={{
           "@context": "https://schema.org",
