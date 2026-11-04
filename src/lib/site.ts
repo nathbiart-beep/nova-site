@@ -58,11 +58,11 @@ export const villes: Record<
     slug: "bruxelles",
     name: "Bruxelles",
     short: "BXL",
-    title: "Soirées étudiantes à Bruxelles : l'agenda de la semaine",
+    title: "Soirées étudiantes à Bruxelles cette semaine : TD, cercles et clubs",
     metaDescription:
-      "Toutes les soirées étudiantes à Bruxelles cette semaine : TD, soirées de cercles, clubs et événements autour de l'ULB, la VUB, Saint-Louis et l'UCLouvain Woluwe.",
+      "Les soirées étudiantes à Bruxelles (BXL) cette semaine : TD des cercles, soirées en club et événements autour de l'ULB, la VUB, Saint-Louis et Woluwe. Mis à jour chaque semaine.",
     intro:
-      "Bruxelles est la plus grande ville étudiante du pays. Entre les TD des cercles, les soirées en club et les grands rendez-vous comme la Saint-V, il se passe quelque chose presque tous les soirs. NOVA rassemble chaque semaine les soirées à ne pas rater, avec les cercles et les organisateurs.",
+      "Bruxelles (BXL) est la plus grande ville étudiante du pays. Entre les TD des cercles, les soirées en club et les grands rendez-vous comme la Saint-V, il se passe quelque chose presque tous les soirs. NOVA rassemble chaque semaine les soirées à ne pas rater, avec les cercles et les organisateurs.",
     campus: ["ULB (Solbosch, Plaine, Erasme)", "VUB", "UCLouvain Saint-Louis", "UCLouvain Woluwe", "Hautes écoles bruxelloises"],
     lieux:
       "Les soirées étudiantes bruxelloises se répartissent entre les salles des cercles, les TD en ville, les bars étudiants et les clubs du centre et d'Ixelles.",
@@ -70,6 +70,10 @@ export const villes: Record<
       {
         q: "Où trouver les soirées étudiantes à Bruxelles cette semaine ?",
         a: "NOVA publie chaque semaine l'agenda des soirées étudiantes à Bruxelles sur cette page et en story à la une sur Instagram (@novastudent.be), avec les cercles et organisateurs identifiés.",
+      },
+      {
+        q: "Quelles soirées étudiantes ce week-end à Bruxelles ?",
+        a: "En semaine, ce sont surtout les TD des cercles. Le week-end, les grosses soirées se passent en club (Mirano, Jeux d'Hiver, C12…). Toutes les dates de la semaine et du week-end sont dans la liste ci-dessus.",
       },
       {
         q: "C'est quoi un TD ?",
@@ -86,9 +90,9 @@ export const villes: Record<
     slug: "namur",
     name: "Namur",
     short: "NAM",
-    title: "Soirées étudiantes à Namur : l'agenda de la semaine",
+    title: "Soirées étudiantes à Namur cette semaine : cercles, bars et clubs",
     metaDescription:
-      "Les soirées étudiantes à Namur cette semaine : soirées de cercles, guindailles et événements autour de l'UNamur et des hautes écoles namuroises.",
+      "Les soirées étudiantes à Namur cette semaine : soirées de cercles, Petit Bitu, Bunker, guindailles et événements de l'UNamur et des hautes écoles. Mis à jour chaque semaine.",
     intro:
       "Namur a une vie étudiante intense pour une ville de sa taille, portée par l'UNamur, les hautes écoles et une tradition folklorique très vivante. NOVA rassemble chaque semaine les soirées étudiantes namuroises et les événements des cercles et des régionales.",
     campus: ["UNamur", "Hénallux", "HEAJ", "IMEP", "Hautes écoles namuroises"],
@@ -114,11 +118,11 @@ export const villes: Record<
     slug: "louvain-la-neuve",
     name: "Louvain-la-Neuve",
     short: "LLN",
-    title: "Soirées étudiantes à Louvain-la-Neuve : l'agenda de la semaine",
+    title: "Soirées LLN cette semaine : les soirées étudiantes à Louvain-la-Neuve",
     metaDescription:
-      "Les soirées étudiantes à Louvain-la-Neuve cette semaine : soirées de cercles, kots-à-projet, guindailles et grands événements comme les 24h vélo.",
+      "Les soirées à LLN cette semaine : casas et soirées des cercles et régionales, kots-à-projets et grands événements à Louvain-la-Neuve. Mis à jour chaque semaine.",
     intro:
-      "Louvain-la-Neuve est une ville pensée pour ses étudiants. Cercles, régionales, kots-à-projet et grands rendez-vous comme les 24h vélo rythment l'année. NOVA rassemble chaque semaine les soirées à ne pas manquer à LLN.",
+      "Louvain-la-Neuve (LLN) est une ville pensée pour ses étudiants. Cercles, régionales, kots-à-projet et grands rendez-vous comme les 24h vélo rythment l'année. NOVA rassemble chaque semaine les soirées à ne pas manquer à LLN.",
     campus: ["UCLouvain (Louvain-la-Neuve)", "Hautes écoles du Brabant wallon"],
     lieux:
       "À Louvain-la-Neuve, la plupart des soirées se passent dans les salles des cercles et des régionales, au cœur de la ville piétonne, à quelques minutes à pied des kots.",
@@ -126,6 +130,10 @@ export const villes: Record<
       {
         q: "Où trouver les soirées étudiantes à Louvain-la-Neuve cette semaine ?",
         a: "NOVA publie chaque semaine l'agenda des soirées étudiantes à LLN sur cette page et en story à la une sur Instagram (@novastudent.be).",
+      },
+      {
+        q: "Où sortir à LLN ce soir ?",
+        a: "La plupart des soirées étudiantes à Louvain-la-Neuve sont les casas et soirées des cercles et des régionales, dans le centre piéton. Toutes les soirées LLN de la semaine sont listées sur cette page, jour par jour.",
       },
       {
         q: "Quand ont lieu les 24h vélo ?",
