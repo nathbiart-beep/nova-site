@@ -97,7 +97,7 @@ export default async function Home() {
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <h2>Les soirées par ville</h2>
+            <h2>Les soirées étudiantes par ville</h2>
             <p className="muted">Une page par ville, mise à jour chaque semaine.</p>
           </div>
           <div className="grid-3">
