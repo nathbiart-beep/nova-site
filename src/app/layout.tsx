@@ -23,7 +23,7 @@ const script = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Nova Student · Soirées étudiantes à Bruxelles, Namur et Louvain-la-Neuve",
+    default: "Soirées étudiantes à Bruxelles, Namur et LLN · Nova Student",
     template: "%s · NOVA",
   },
   description: site.description,
