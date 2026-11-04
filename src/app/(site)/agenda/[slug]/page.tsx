@@ -40,7 +40,7 @@ export default async function EventPage({ params }: Props) {
     "@type": "Event",
     name: e.title,
     startDate: start,
-    endDate: e.dateFin || undefined,
+    endDate: e.dateFin || e.date || undefined,
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     description: e.description || undefined,
@@ -52,11 +52,16 @@ export default async function EventPage({ params }: Props) {
       address: { "@type": "PostalAddress", streetAddress: e.adresse || undefined, addressLocality: ville?.name, addressCountry: "BE" },
     },
     organizer: e.organisateur
-      ? { "@type": "Organization", name: e.organisateur }
+      ? { "@type": "Organization", name: e.organisateur, url: e.lien || `${SITE_URL}/agenda/${slug}` }
       : { "@type": "Organization", name: "NOVA", url: SITE_URL },
-    offers: e.lien
-      ? { "@type": "Offer", url: e.lien, availability: "https://schema.org/InStock", price: /gratuit/i.test(e.prix) ? "0" : undefined, priceCurrency: "EUR" }
-      : undefined,
+    performer: { "@type": "PerformingGroup", name: e.organisateur || "NOVA" },
+    offers: {
+      "@type": "Offer",
+      url: e.lien || `${SITE_URL}/agenda/${slug}`,
+      availability: "https://schema.org/InStock",
+      price: /gratuit|libre/i.test(e.prix || "") ? "0" : (e.prix || "").match(/(\d+(?:[.,]\d+)?)\s*€/)?.[1]?.replace(",", "."),
+      priceCurrency: "EUR",
+    },
   };
 
   return (
