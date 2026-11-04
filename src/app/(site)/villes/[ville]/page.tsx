@@ -140,7 +140,18 @@ export default async function VillePage({ params }: Props) {
                 startDate: e.entry.date
                   ? `${e.entry.date}T${/^\d{1,2}:\d{2}$/.test(e.entry.heure) ? e.entry.heure.padStart(5, "0") : "20:00"}:00${brusselsOffset(e.entry.date)}`
                   : undefined,
+                endDate: e.entry.dateFin || e.entry.date || undefined,
                 url: `${SITE_URL}/agenda/${e.slug}`,
+                image: [`${SITE_URL}${e.entry.image || "/logo-nova.png"}`],
+                organizer: { "@type": "Organization", name: e.entry.organisateur || "NOVA", url: e.entry.lien || `${SITE_URL}/agenda/${e.slug}` },
+                performer: { "@type": "PerformingGroup", name: e.entry.organisateur || "NOVA" },
+                offers: {
+                  "@type": "Offer",
+                  url: e.entry.lien || `${SITE_URL}/agenda/${e.slug}`,
+                  availability: "https://schema.org/InStock",
+                  price: /gratuit|libre/i.test(e.entry.prix || "") ? "0" : (e.entry.prix || "").match(/(\d+(?:[.,]\d+)?)\s*€/)?.[1]?.replace(",", "."),
+                  priceCurrency: "EUR",
+                },
                 eventStatus: "https://schema.org/EventScheduled",
                 eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
                 location: {
