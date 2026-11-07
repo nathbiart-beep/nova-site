@@ -20,8 +20,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const where = [e.lieu, villeName(e.ville)].filter(Boolean).join(", ");
   const description =
     (e.description?.slice(0, 150) || `${e.title} le ${formatDate(e.date, true)} à ${where}.`) + " Toutes les infos sur NOVA.";
+  const old = e.date ? Date.now() - new Date(e.dateFin || e.date).getTime() > 60 * 864e5 : false;
   return {
     title: `${e.title} · ${formatDate(e.date)} · ${villeName(e.ville)}`,
+    robots: old ? { index: false, follow: true } : undefined,
     description,
     alternates: { canonical: `/agenda/${slug}` },
     openGraph: { type: "website", title: e.title, description, images: e.image ? [e.image] : undefined },
