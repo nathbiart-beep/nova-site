@@ -23,7 +23,7 @@ export function ArticleCard({ a }: { a: ArticleEntry }) {
     <article className="card article-card">
       <Link href={href} className="article-card-media" tabIndex={-1} aria-hidden="true">
         {a.entry.cover ? (
-          <Image src={a.entry.cover} alt="" fill sizes="(max-width: 700px) 100vw, 33vw" />
+          <Image src={a.entry.cover} alt={a.entry.coverAlt || a.entry.title} fill sizes="(max-width: 700px) 100vw, 33vw" />
         ) : (
           <div className="article-card-placeholder">
             <Star size={64} />
