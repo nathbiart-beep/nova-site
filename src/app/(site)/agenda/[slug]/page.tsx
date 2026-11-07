@@ -43,7 +43,7 @@ export default async function EventPage({ params }: Props) {
     endDate: e.dateFin || e.date || undefined,
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-    description: e.description || undefined,
+    description: e.description || `${e.title}${e.lieu ? ` au ${e.lieu}` : ""}${ville ? `, à ${ville.name}` : ""}.`,
     image: e.image ? [`${SITE_URL}${e.image}`] : [`${SITE_URL}/logo-nova.png`],
     url: `${SITE_URL}/agenda/${slug}`,
     location: {
@@ -61,6 +61,7 @@ export default async function EventPage({ params }: Props) {
       availability: "https://schema.org/InStock",
       price: /gratuit|libre/i.test(e.prix || "") ? "0" : (e.prix || "").match(/(\d+(?:[.,]\d+)?)\s*€/)?.[1]?.replace(",", "."),
       priceCurrency: "EUR",
+      validFrom: e.date ? new Date(new Date(e.date).getTime() - 30 * 864e5).toISOString().slice(0, 10) : undefined,
     },
   };
 
