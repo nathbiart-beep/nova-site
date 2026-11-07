@@ -137,6 +137,7 @@ export default async function VillePage({ params }: Props) {
               item: {
                 "@type": "Event",
                 name: e.entry.title,
+                description: e.entry.description || `Soirée étudiante à ${v.name}${e.entry.organisateur ? `, organisée par ${e.entry.organisateur}` : ""}.`,
                 startDate: e.entry.date
                   ? `${e.entry.date}T${/^\d{1,2}:\d{2}$/.test(e.entry.heure) ? e.entry.heure.padStart(5, "0") : "20:00"}:00${brusselsOffset(e.entry.date)}`
                   : undefined,
@@ -151,6 +152,7 @@ export default async function VillePage({ params }: Props) {
                   availability: "https://schema.org/InStock",
                   price: /gratuit|libre/i.test(e.entry.prix || "") ? "0" : (e.entry.prix || "").match(/(\d+(?:[.,]\d+)?)\s*€/)?.[1]?.replace(",", "."),
                   priceCurrency: "EUR",
+                  validFrom: e.entry.date ? new Date(new Date(e.entry.date).getTime() - 30 * 864e5).toISOString().slice(0, 10) : undefined,
                 },
                 eventStatus: "https://schema.org/EventScheduled",
                 eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
