@@ -46,6 +46,7 @@ export const metadata: Metadata = {
   verification: {
     // Ajoutez ici le code de Google Search Console après avoir créé votre propriété (voir README).
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+    other: { "msvalidate.01": "EED3038D8600BF070A632F1ACFF6851D" },
   },
 };
 
