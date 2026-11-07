@@ -5,6 +5,7 @@ import { SITE_URL, villeList } from "@/lib/site";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [articles, events] = await Promise.all([getArticles(), getEvents()]);
   const now = new Date();
+  const cutoff = new Date(now.getTime() - 30 * 864e5).toISOString().slice(0, 10);
   const staticPages: MetadataRoute.Sitemap = [
     { url: `${SITE_URL}/`, lastModified: now, changeFrequency: "daily", priority: 1 },
     { url: `${SITE_URL}/agenda`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
@@ -23,7 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
-    ...events.map((e) => ({
+    ...events.filter((e) => !e.entry.date || (e.entry.dateFin || e.entry.date) >= cutoff).map((e) => ({
       url: `${SITE_URL}/agenda/${e.slug}`,
       lastModified: e.entry.date ? new Date(e.entry.date) : now,
       changeFrequency: "weekly" as const,
