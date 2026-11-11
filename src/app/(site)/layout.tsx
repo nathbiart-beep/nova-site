@@ -1,5 +1,6 @@
 import { Analytics } from "@/components/analytics";
 import { Footer, Header, JsonLd } from "@/components/layout-parts";
+import { PromoBanner } from "@/components/promo-banner";
 import { SITE_URL, site } from "@/lib/site";
 
 const organization = {
@@ -34,6 +35,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       <a href="#contenu" className="skip-link">
         Aller au contenu
       </a>
+      <PromoBanner />
       <Header />
       <main id="contenu">{children}</main>
       <Footer />
