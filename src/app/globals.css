@@ -286,3 +286,14 @@ p { margin: 0 0 1em; }
   .city-card .arrow { position: static; font-size: 1.1rem; }
   .article-card-media:has(.article-card-placeholder) { aspect-ratio: auto; height: 84px; }
 }
+
+/* Bandeau concours (temporaire) */
+.promo-banner { position: relative; background: var(--ink); color: #fff; font-size: 14px; }
+.promo-link { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; padding: 9px 44px; text-decoration: none; color: #fff; }
+.promo-link:hover .promo-cta { text-decoration: underline; text-decoration-color: var(--green); }
+.promo-tag { background: var(--green); color: var(--ink); font-weight: 800; text-transform: uppercase; letter-spacing: .06em; font-size: 11px; padding: 3px 8px; border-radius: 999px; }
+.promo-text strong { color: var(--green); }
+.promo-cta { font-weight: 700; }
+.promo-close { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: none; border: 0; color: #fff; font-size: 22px; line-height: 1; padding: 6px 10px; cursor: pointer; opacity: .7; }
+.promo-close:hover { opacity: 1; }
+@media (max-width: 560px) { .promo-link { gap: 6px 10px; font-size: 13px; } .promo-cta { flex-basis: 100%; text-align: center; } }
