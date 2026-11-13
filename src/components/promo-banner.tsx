@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const START = Date.parse("2026-11-12T14:00:00+01:00");
 const END = Date.parse("2026-11-18T23:59:59+01:00");
 const KEY = "nova-promo-gta6-ferme";
-const LINK = "https://www.instagram.com/novastudent.be/?utm_source=site&utm_medium=banniere&utm_campaign=concours-gta6";
+const LINK = "https://www.instagram.com/p/DfpkfWzKXTX/?utm_source=site&utm_medium=banniere&utm_campaign=concours-gta6";
 
 export function PromoBanner() {
   const [show, setShow] = useState(false);
