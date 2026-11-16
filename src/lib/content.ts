@@ -56,7 +56,16 @@ export async function getEvents({ upcomingOnly = false, ville }: { upcomingOnly?
   return all
     .filter((e) => !ville || e.entry.ville === ville)
     .filter((e) => !upcomingOnly || (e.entry.dateFin ?? e.entry.date ?? "") >= today)
-    .sort((a, b) => (a.entry.date ?? "").localeCompare(b.entry.date ?? ""));
+    .sort((a, b) => eventSortKey(a.entry).localeCompare(eventSortKey(b.entry)));
+}
+
+/** Date puis heure de début ; une heure avant 6h compte comme la fin de la nuit (après 23h). */
+function eventSortKey(e: { date?: string | null; heure?: string | null }) {
+  const m = /^(\d{1,2})[:hH](\d{2})?/.exec((e.heure ?? "").trim());
+  let h = m ? Number(m[1]) : 99;
+  if (m && h < 6) h += 24;
+  const min = m && m[2] ? m[2] : "00";
+  return `${e.date ?? ""} ${String(h).padStart(2, "0")}:${min}`;
 }
 
 export async function getPartenaires() {
