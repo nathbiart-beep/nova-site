@@ -101,3 +101,11 @@ export function brusselsOffset(iso: string) {
   const h = Number(name?.replace("GMT", "") || "1");
   return `+0${h}:00`;
 }
+
+/** Offre schema.org : prix seulement s'il est connu (évite les avertissements Search Console). */
+export function offerLd(prix: string | null | undefined, url: string) {
+  const p = prix || "";
+  const price = /gratuit|libre/i.test(p) ? "0" : p.match(/(\d+(?:[.,]\d+)?)\s*€/)?.[1]?.replace(",", ".");
+  if (price === undefined) return undefined;
+  return { "@type": "Offer", url, availability: "https://schema.org/InStock", price, priceCurrency: "EUR" };
+}
