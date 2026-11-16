@@ -11,6 +11,7 @@ export const site = {
   instagram: "https://www.instagram.com/novastudent.be/",
   instagramHandle: "@novastudent.be",
   linkedin: "https://www.linkedin.com/company/nova-bxl/",
+  eventForm: "https://docs.google.com/forms/d/1poNQgJG0f40saf96_yI_4OWPzhD1SnN2cHRuF6gHce4/viewform",
   keywords: [
     "soirées étudiantes",
     "soirée étudiante Bruxelles",
