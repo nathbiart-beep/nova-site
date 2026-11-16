@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { brusselsOffset, formatDate, reader } from "@/lib/content";
+import { brusselsOffset, formatDate, offerLd, reader } from "@/lib/content";
 import { SITE_URL, site, villeName, villes, type VilleSlug } from "@/lib/site";
 import { Breadcrumbs, JsonLd } from "@/components/layout-parts";
 
@@ -18,8 +18,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const e = await reader.collections.evenements.read(slug);
   if (!e) return {};
   const where = [e.lieu, villeName(e.ville)].filter(Boolean).join(", ");
-  const description =
-    (e.description?.slice(0, 150) || `${e.title} le ${formatDate(e.date, true)} à ${where}.`) + " Toutes les infos sur NOVA.";
+  const quand = `${formatDate(e.date, true)}${e.heure ? ` à ${e.heure}` : ""}`;
+  const base = `${e.title} : ${quand}, ${where}.`;
+  const extra = (e.description || "").replace(/\s+/g, " ").trim();
+  const description = (extra ? `${base} ${extra}` : `${base} Infos et tickets sur NOVA.`).slice(0, 158);
   const old = e.date ? Date.now() - new Date(e.dateFin || e.date).getTime() > 60 * 864e5 : false;
   return {
     title: `${e.title} · ${formatDate(e.date)} · ${villeName(e.ville)}`,
@@ -42,7 +44,7 @@ export default async function EventPage({ params }: Props) {
     "@type": "Event",
     name: e.title,
     startDate: start,
-    endDate: e.dateFin || e.date || undefined,
+    endDate: e.dateFin || undefined,
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     description: e.description || `${e.title}${e.lieu ? ` au ${e.lieu}` : ""}${ville ? `, à ${ville.name}` : ""}.`,
@@ -57,14 +59,7 @@ export default async function EventPage({ params }: Props) {
       ? { "@type": "Organization", name: e.organisateur, url: e.lien || `${SITE_URL}/agenda/${slug}` }
       : { "@type": "Organization", name: "NOVA", url: SITE_URL },
     performer: { "@type": "PerformingGroup", name: e.organisateur || "NOVA" },
-    offers: {
-      "@type": "Offer",
-      url: e.lien || `${SITE_URL}/agenda/${slug}`,
-      availability: "https://schema.org/InStock",
-      price: /gratuit|libre/i.test(e.prix || "") ? "0" : (e.prix || "").match(/(\d+(?:[.,]\d+)?)\s*€/)?.[1]?.replace(",", "."),
-      priceCurrency: "EUR",
-      validFrom: e.date ? new Date(new Date(e.date).getTime() - 30 * 864e5).toISOString().slice(0, 10) : undefined,
-    },
+    offers: offerLd(e.prix, e.lien || `${SITE_URL}/agenda/${slug}`),
   };
 
   return (
