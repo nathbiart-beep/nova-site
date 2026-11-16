@@ -43,6 +43,9 @@ export default async function AgendaPage() {
           ) : (
             <EmptyAgenda />
           )}
+          <p className="muted" style={{ marginTop: "2rem" }}>
+            Ton event n'est pas là ? <Link href="/ajoute-ton-event"><strong>Ajoute-le ici</strong></Link>
+          </p>
         </div>
       </section>
     </>
