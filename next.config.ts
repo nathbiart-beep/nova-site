@@ -15,6 +15,9 @@ const nextConfig: NextConfig = {
     return [
       // Short, memorable admin address: /admin opens the content editor.
       { source: "/admin", destination: "/keystatic", permanent: false },
+      // Lien court pour les albums photo (Saint-V, TD) sur la page Facebook NOVA.
+      { source: "/saintv", destination: "https://www.facebook.com/profile.php?id=61596629136571&sk=photos", permanent: false },
+      { source: "/photos", destination: "https://www.facebook.com/profile.php?id=61596629136571&sk=photos", permanent: false },
     ];
   },
   async headers() {
